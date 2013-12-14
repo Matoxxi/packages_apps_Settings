@@ -1280,4 +1280,8 @@
     <string name="heads_up_time_out_10sec">10 seconds</string>
     <string name="heads_up_time_out_never">Never</string>
 
+    <!-- Chamber of Secrets -->
+    <string name="chamber_title">Chamber of secrets</string>
+    <string name="chamber_toast">The chamber of secrets has opened</string>
+
 </resources>
