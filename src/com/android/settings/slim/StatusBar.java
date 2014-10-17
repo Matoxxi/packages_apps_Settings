@@ -47,6 +47,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String TAG = "StatusBarSettings";
 
+    private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
@@ -61,6 +62,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private int mbatteryStyle;
     private int mbatteryShowPercent;
+    private SwitchPreference mNetworkArrows;
+    private SwitchPreference mTicker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,16 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        // Start observing for changes on auto brightness
+        StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
+                new StatusBarBrightnessChangedObserver(new Handler());
+        statusBarBrightnessChangedObserver.startObserving();
+
+        mTicker = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_TICKER);
+        mTicker.setChecked(Settings.System.getInt(
+                getContentResolver(), Settings.System.TICKER_ENABLED, 0) == 1);
+        mTicker.setOnPreferenceChangeListener(this);
 
         mStatusBarBrightnessControl =
             (SwitchPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
@@ -118,6 +131,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, mbatteryShowPercent);
             mStatusBarBatteryShowPercent.setSummary(
                     mStatusBarBatteryShowPercent.getEntries()[index]);
+            return true;
+        } else if (preference == mTicker) {
+            Settings.System.putInt(resolver, Settings.System.TICKER_ENABLED,
+                    (Boolean) newValue ? 1 : 0);
             return true;
         } else if (preference == mStatusBarBrightnessControl) {
             Settings.System.putInt(getContentResolver(),
