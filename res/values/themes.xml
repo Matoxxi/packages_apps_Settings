@@ -121,12 +121,16 @@
         <item name="@*android:preferenceFragmentListStyle">@style/PreferenceFragmentListSinglePane</item>
         <item name="@*android:preferenceFragmentStyle">@style/PreferenceFragmentStyle</item>
         <item name="@*android:preferenceFragmentPaddingSide">@dimen/settings_side_margin</item>
+        <item name="android:colorAccent">@color/theme_accent</item>
+        <item name="android:colorBackground">@color/exposed_bg_dark</item>
+        <item name="android:textColorPrimary">@color/exposed_primary_text_light</item>
+        <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
 
         <item name="apnPreferenceStyle">@style/ApnPreference</item>
 
         <item name="ic_menu_add">@drawable/ic_menu_add_dark</item>
         <item name="ic_menu_moreoverflow">@*android:drawable/ic_menu_moreoverflow_holo_dark</item>
-        <item name="ic_wps">@drawable/ic_wps_dark</item>
+        <item name="ic_wps">@drawable/ic_wps_light</item>
         <item name="wifi_signal">@drawable/wifi_signal_teal</item>
         <item name="wifi_no_signal">@drawable/wifi_no_signal_teal</item>
         <item name="side_margin">@dimen/settings_side_margin</item>
@@ -259,3 +263,4 @@
     </style>
 
 </resources>
+
