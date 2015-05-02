@@ -24,7 +24,7 @@
     android:paddingTop="8dip"
     android:paddingBottom="8dip"
     android:orientation="horizontal"
-    android:background="@color/exposed_bg_dark">
+    android:background="@drawable/expanded_item_background">
 
     <ImageView
         android:id="@+id/app_icon"
@@ -49,8 +49,8 @@
             android:layout_marginTop="2dip"
             android:singleLine="true"
             android:ellipsize="marquee"
+            android:textColor="@color/text_color_black"
             android:textAppearance="@style/TextAppearance.Medium"
-            android:textColor="@color/exposed_primary_text_light"
             android:textAlignment="viewStart" />
 
         <Spinner
