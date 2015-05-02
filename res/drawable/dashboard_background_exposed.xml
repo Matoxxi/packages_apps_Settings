@@ -4,7 +4,11 @@
     <item>
         <shape  android:shape="rectangle">
 
+<<<<<<< HEAD
             <solid android:color="@color/exposed_bg_dark" />
+=======
+            <solid android:color="@color/dashboard_background_color" />
+>>>>>>> cc45d78... Exposing Settings backgrounds for more theming options, while not impacted stock.
 
         </shape>
     </item>
