@@ -571,6 +571,7 @@
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_power_menu</item>
         <item>@string/shortcut_action_qs</item>
+        <item>@string/shortcut_action_smart</item>
         <item>@string/shortcut_action_recent</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
@@ -590,6 +591,7 @@
         <item>**ime**</item>
         <item>**power_menu**</item>
         <item>**settings_panel**</item>
+        <item>**smart_pulldown**</item>
         <item>**recents**</item>
         <item>**power**</item>
         <item>**screenshot**</item>
@@ -840,6 +842,50 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+
+    <string-array name="shortcut_action_tile_entries">
+        <item>@string/shortcut_action_power</item>
+        <item>@string/shortcut_action_power_menu</item>
+        <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_recent</item>
+    </string-array>
+
+    <string-array name="shortcut_action_tile_values" translatable="false">
+        <item>**power**</item>
+        <item>**power_menu**</item>
+        <item>**screenshot**</item>
+        <item>**recents**</item>
+    </string-array>
+
+    <!-- Slim Actions For Shortcuts -->
+    <string-array name="shortcut_action_launcher_entries">
+        <item>@string/shortcut_action_kill</item>
+        <item>@string/shortcut_action_lastapp</item>
+        <item>@string/shortcut_action_ime</item>
+        <item>@string/shortcut_action_ring_silent</item>
+        <item>@string/shortcut_action_ring_vib</item>
+        <item>@string/shortcut_action_ring_vib_silent</item>
+        <item>@string/shortcut_action_power</item>
+        <item>@string/shortcut_action_assist</item>
+        <item>@string/shortcut_action_torch</item>
+        <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_smart</item>
+    </string-array>
+
+    <string-array name="shortcut_action_launcher_values" translatable="false">
+        <item>**kill**</item>
+        <item>**lastapp**</item>
+        <item>**ime**</item>
+        <item>**ring_silent**</item>
+        <item>**ring_vib**</item>
+        <item>**ring_vib_silent**</item>
+        <item>**power**</item>
+        <item>**assist**</item>
+        <item>**torch**</item>
+        <item>**screenshot**</item>
+        <item>**smart_pulldown**</item>
     </string-array>
 
     <string-array name="shortcut_action_power_menu_entries">
