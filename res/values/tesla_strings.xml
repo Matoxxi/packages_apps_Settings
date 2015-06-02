@@ -135,7 +135,6 @@
     <string name="volume_steps_15">15</string>
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
-<<<<<<< HEAD
 
 	<!-- Gesture Anywhere -->
     <string name="gesture_anywhere_title">Gesture Anywhere</string>
@@ -189,7 +188,4 @@
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
 
-=======
-	
->>>>>>> parent of 75aa2e4... Settings: Gesture Anywhere [2/2]
 </resources>
