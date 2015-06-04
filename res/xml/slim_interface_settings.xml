@@ -42,7 +42,7 @@
   
     <PreferenceScreen
         android:key="recent_panel"
-        android:fragment="com.android.settings.broken.RecentPanel"
+        android:fragment="com.android.settings.tesla.RecentPanel"
         android:title="@string/recent_panel_category" />
 
     <PreferenceScreen

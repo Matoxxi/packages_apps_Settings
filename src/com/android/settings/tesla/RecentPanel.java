@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.broken;
+package com.android.settings.tesla;
 
 import android.app.ActivityManager;
 import android.app.AlertDialog;
