@@ -922,8 +922,6 @@
         <item>@string/recent_panel_expanded_mode_never</item>
     </string-array>
 
-    <string-array name="recent_panel_expanded_mode_values" translatable="false">
-
     <!-- Expanded Desktop -->
     <string-array name="expanded_desktop_entries" translatable="false">
         <item>@string/expanded_hide_both</item>
