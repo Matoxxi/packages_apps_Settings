@@ -55,6 +55,11 @@
             android:key="lockscreen_bottom_shortcuts"
             android:title="@string/lockscreen_bottom_shortcuts_title"/>
 
+        <com.android.settings.slim.SecureSettingSwitchPreference
+                android:key="lockscreen_visualizer"
+                android:title="@string/lockscreen_visualizer_title"
+                android:defaultValue="true"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
