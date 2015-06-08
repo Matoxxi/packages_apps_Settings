@@ -34,6 +34,7 @@
         android:fragment="com.android.settings.slim.NavigationSettings"
         android:title="@string/navigation_settings_title" />
 
+    <!-- Screen and animations -->
     <PreferenceScreen
         android:key="screen_and_animations"
         android:fragment="com.android.settings.tesla.ScreenAndAnimations"
@@ -48,12 +49,6 @@
         android:id="@+id/app_circle_sidebar"
         android:title="@string/app_circle_bar_title"
         android:fragment="com.android.settings.terminus.AppCircleSidebar" />
-
-    <PreferenceScreen
-        android:key="screen_recorder"
-        android:title="@string/screen_recorder_title"
-        android:fragment="com.android.settings.slim.ScreenRecorderSettings" >
-    </PreferenceScreen>
 
     <PreferenceScreen
         android:key="lock_screen_weather_settings"
