@@ -121,14 +121,6 @@
                     android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
       </dashboard-tile>
 
-        <!-- Status bar -->
-        <dashboard-tile
-                android:id="@+id/gesture_settings"
-                android:title="@string/gesture_title"
-                android:fragment="com.android.settings.tesla.GestureSettings"
-                android:icon="@drawable/ic_settings_gestures"
-                />
-
         <!-- Kernel Auditor App -->
         <dashboard-tile
                 android:id="@+id/kernel_auditor"
@@ -138,17 +130,6 @@
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.grarak.kerneladiutor"
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
-        </dashboard-tile>
-
-        <!-- DeviceHandler device specific screen off gesture settings -->
-        <dashboard-tile
-                android:id="@+id/screen_off_gesture_settings"
-                android:icon="@drawable/ic_settings_gestures"
-                android:title="@string/screen_off_gesture_settings_title">
-                <intent
-                    android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
-                    android:targetPackage="com.slim.device"
-                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
         </dashboard-tile>
 
     </dashboard-category>
