@@ -192,4 +192,12 @@
    <!-- Visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
+    <!-- Gestures -->
+    <string name="gesture_title">Gestures</string>
+
+     <!--- Tap To Wake -->
+    <string name="double_tap_to_wake_title">Double-tap to wake</string>
+    <string name="double_tap_to_wake_summary">Double-tap on the screen to turn on the display</string>
+
+    <string name="lift_to_wake_title">Lift to wake</string>
 </resources>
