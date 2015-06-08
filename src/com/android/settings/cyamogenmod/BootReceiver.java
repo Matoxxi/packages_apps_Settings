@@ -41,6 +41,5 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context ctx, Intent intent) {
         /* Restore the hardware tunable values */
         GestureSettings.restore(ctx);
-        InputMethodAndLanguageSettings.restore(ctx);
     }
 }
