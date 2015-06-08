@@ -28,7 +28,7 @@ import com.android.settings.DisplaySettings;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
-import com.android.settings.nameless.GestureSettings;
+import com.android.settings.tesla.GestureSettings;
 
 import java.util.Arrays;
 import java.util.List;
