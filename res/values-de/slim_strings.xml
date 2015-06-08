@@ -43,8 +43,8 @@
   <string name="privacy_guard_advanced_settings_title">Erweitert</string>
   <string name="privacy_guard_notification_title">Benachrichtigung</string>
   <string name="privacy_guard_notifiation_summary">Bei aktiviertem Datenschutz Benachrichtigung anzeigen.</string>
-  <string name="slim_version_title">Slim-Version</string>
-  <string name="slim_version_default">Unbekannt</string>
+  <string name="tesla_version_title">Tesla-Version</string>
+  <string name="tesla_version_default">Unbekannt</string>
   <string name="build_date">Erstellungsdatum</string>
   <string name="build_date_default">Unbekannt</string>
   <string name="processor_info">Prozessor-Info</string>
@@ -193,7 +193,7 @@
   <string name="default_string">Standard</string>
   <string name="reset_message">Standardeinstellungen wiederherstellen?</string>
   <string name="header_category_personalization">Personalisierung</string>
-  <string name="interface_settings_title">Benutzeroberfläche</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="navigation_settings_title">Navigation</string>
   <string name="dialog_color_picker">Farbauswahl</string>
   <string name="press_color_to_apply">Auf Farbe rechts unten drücken, um sie anzuwenden</string>

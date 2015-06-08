@@ -38,8 +38,8 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="privacy_guard_advanced_settings_title">Speciális beállítások</string>
   <string name="privacy_guard_notification_title">Értesítés</string>
   <string name="privacy_guard_notifiation_summary">Mutassa az értesítést, ha a privacy guard aktív.</string>
-  <string name="slim_version_title">Slim verzió</string>
-  <string name="slim_version_default">Ismeretlen</string>
+  <string name="tesla_version_title">Tesla verzió</string>
+  <string name="tesla_version_default">Ismeretlen</string>
   <string name="build_date">Készítés dátuma</string>
   <string name="build_date_default">Ismeretlen</string>
   <string name="mem_info">Memória</string>
@@ -187,7 +187,7 @@ Ez problémákat okozhat némelyik alkalmazásnál.</string>
   <string name="default_string">Alapértelmezett</string>
   <string name="reset_message">Mindent visszaállítasz alaphelyzetbe?</string>
   <string name="header_category_personalization">Személyre szabás</string>
-  <string name="interface_settings_title">Interfész</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="dialog_color_picker">Szín választó</string>
   <string name="press_color_to_apply">Nyomj egy színre az alkalmazásához</string>
   <string name="hex">Hex:</string>
