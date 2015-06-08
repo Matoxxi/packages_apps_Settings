@@ -121,6 +121,14 @@
                     android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
       </dashboard-tile>
 
+        <!-- Status bar -->
+        <dashboard-tile
+                android:id="@+id/gesture_settings"
+                android:title="@string/gesture_title"
+                android:fragment="com.android.settings.tesla.GestureSettings"
+                android:icon="@drawable/ic_settings_gestures"
+                />
+
         <!-- Kernel Auditor App -->
         <dashboard-tile
                 android:id="@+id/kernel_auditor"
