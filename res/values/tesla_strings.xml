@@ -217,4 +217,8 @@
     <string name="clock_font_normal">Normal</string>
     <string name="status_bar_show_clock_second_title">Clock seconds</string>    
 
+    <!-- Statusbar Tesla logo -->
+    <string name="status_bar_tesla_logo_title">Tesla logo</string>
+    <string name="status_bar_tesla_logo_summary">Enable to show Tesla logo on the left side of statusbar</string>
+
 </resources>
