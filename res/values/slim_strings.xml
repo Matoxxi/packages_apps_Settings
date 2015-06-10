@@ -387,6 +387,7 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="right_clock">Right clock</string>
     <string name="center_clock">Center clock</string>
+    <string name="left_clock">Left clock</string> 
     <string name="dont_show">Don\'t show</string>
     <string name="clock_date_display">Date</string>
     <string name="clock_date_display_summary">Display custom date before the clock</string>
@@ -489,6 +490,7 @@
     <string name="qs_tile_visualizer">AudioFX</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
     <string name="qs_tile_screenshot">Screenshot</string>
+    <string name="qs_expanded_desktop_tile">Expanded desktop</string>
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
@@ -539,12 +541,22 @@
     <string name="shortcut_action_kill">Kill app</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_lastapp">Last app</string>
+    <string name="shortcut_action_menu_big">Menu Big</string>
     <string name="shortcut_action_notifications">Notifications</string>
     <string name="shortcut_action_qs">Quicksettings panel</string>
     <string name="shortcut_action_torch">Flashlight</string>
     <string name="shortcut_action_ring_vib">Ring/Vib</string>
     <string name="shortcut_action_ring_silent">Ring/Silent</string>
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+
+    <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_power_off">Power off</string>
+    <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_sound">Sound</string>
+    <string name="shortcut_action_users">Users</string>
+    <string name="shortcut_action_lockdown">Lock now</string>
+    <string name="shortcut_action_screenrecord">Screen recorder</string>
+
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
     <string name="shortcut_action_select_action">Choose action:</string>
@@ -646,9 +658,11 @@
     <!-- Display & Lights screen, setting options for LCD density -->
     <string name="lcd_density">LCD density</string>
     <string name="dialog_title_lcd_density">LCD density</string>
-    <string name="lcd_density_value_format">%d DPI</string>
-    <string name="lcd_density_default_value_format">%d DPI (default)</string>
+    <string name="lcd_density_value_format">%1$d DPI (default: %2$d DPI)</string>
+    <string name="lcd_density_default_value_format">%1$d DPI (default)</string>
     <string name="restarting_ui">Restarting UI\u2026</string>
+    <string name="lcd_density_error_msg">The value must be between %1$d and %2$d DPI</string>
+    <string name="lcd_density_dialog_title">Enter value between %1$d and %2$d DPI</string>
 
     <!-- SU indicator -->
     <string name="su_indicator_title">Superuser indicator</string>
@@ -705,6 +719,7 @@
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigation options</string>
+    <string name="power_menu_title">Global menu</string>
 
     <!-- Hardware keys -->
     <string name="hardwarekeys_pref_title">Hardware buttons</string>
@@ -829,6 +844,7 @@
     <string name="heads_up_time_out_title">Time out</string>
     <string name="heads_up_time_out_summary">Heads up notification will show up for <xliff:g id="number">%d</xliff:g> seconds</string>
     <string name="heads_up_time_out_never_summary">Heads up notification will show until it is dismissed</string>
+    <string name="heads_up_time_out_2sec">2 seconds</string>
     <string name="heads_up_time_out_4sec">4 seconds</string>
     <string name="heads_up_time_out_6sec">6 seconds</string>
     <string name="heads_up_time_out_8sec">8 seconds</string>
@@ -1077,5 +1093,92 @@
 
     <!-- Rescan storage -->
     <string name="storage_rescan_media">Rescan media for the storage volume</string>
+
+    <!-- Recent panel -->
+    <string name="recent_panel_category">Recent apps panel</string>
+    <string name="recents_settings_summary">Options for Slim Recents</string>
+    <string name="use_slim_recents_title">Slim Recents</string>
+    <string name="show_running_tasks_title">Only show running apps</string>
+    <string name="recents_max_apps_title">Max allowed apps</string>
+    <string name="recent_panel_scale_title">Size</string>
+    <string name="recent_panel_scale_summary">Recent apps panel size in percent</string>
+    <string name="recent_panel_100">100% (default)</string>
+    <string name="recent_panel_85">85%</string>
+    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_expanded_mode_title">Expanded mode</string>
+    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
+    <string name="recent_panel_expanded_mode_always">Always</string>
+    <string name="recent_panel_expanded_mode_never">Never</string>
+    <string name="recent_panel_show_topmost_title">Show topmost task</string>
+    <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
+    <string name="recent_panel_bg_color_title">Panel background color</string>
+    <string name="recent_card_bg_color_title">Card background color</string>
+    <string name="recent_card_text_color_title">Card text color</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
+
+    <!-- Expanded Desktop -->
+    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="expanded_hide_nothing">Hide nothing</string>
+    <string name="expanded_hide_status">Hide status bar</string>
+    <string name="expanded_hide_navigation">Hide navigation bar</string>
+    <string name="expanded_hide_both">Hide both</string>
+    <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \'Enabled for all\' to the off position</string>
+    <string name="expanded_desktop_state">Expanded state</string>
+    <string name="expanded_enabled_for_all">Enabled for all</string>
+    <string name="expanded_desktop_style">Expanded desktop style</string>
+    <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
+    <string name="expanded_desktop_title">Expanded desktop options</string>
+
+    <!-- Screen recorder -->
+    <string name="screen_recorder_video_dimensions_title">Video size</string>
+    <string name="screen_recorder_video_bitrate_title">Bitrate</string>
+    <string name="screen_recorder_record_audio_title">External audio</string>
+    <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400">240x400</string>
+    <string name="screen_recorder_size_360x640">360x640</string>
+    <string name="screen_recorder_size_480x800">480x800</string>
+    <string name="screen_recorder_size_480x854">480x854</string>
+    <string name="screen_recorder_size_540x960">540x960</string>
+    <string name="screen_recorder_size_600x1024">600x1024</string>
+    <string name="screen_recorder_size_720x1280">720x1280</string>
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
+    <string name="screen_recorder_bitrate_100000">100000</string>
+    <string name="screen_recorder_bitrate_250000">250000</string>
+    <string name="screen_recorder_bitrate_500000">500000</string>
+    <string name="screen_recorder_bitrate_1000000">1000000</string>
+    <string name="screen_recorder_bitrate_2000000">2000000</string>
+    <string name="screen_recorder_bitrate_3000000">3000000</string>
+    <string name="screen_recorder_bitrate_4000000">4000000</string>
+    <string name="screen_recorder_bitrate_5000000">5000000</string>
+    <string name="screen_recorder_bitrate_10000000">10000000</string>
+    <string name="screen_recorder_bitrate_20000000">20000000</string>
+
+    <string name="screen_recorder_title">Screen recorder settings</string>
+    <string name="screen_recorder_summary">Adjust screen recorder settings</string>
+    <string name="shortcut_action_screenrecord">Screen recorder</string>
+
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_show_searchbar">Disable Search Bar in stock Recents</string>
+    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the stock recents panel</string>
 
 </resources>

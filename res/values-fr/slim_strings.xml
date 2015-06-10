@@ -43,8 +43,8 @@
   <string name="privacy_guard_advanced_settings_title">Paramètres avancés</string>
   <string name="privacy_guard_notification_title">Notification</string>
   <string name="privacy_guard_notifiation_summary">Afficher une notification lorsque la protection des données est active.</string>
-  <string name="slim_version_title">Version Slim</string>
-  <string name="slim_version_default">Inconnu</string>
+  <string name="tesla_version_title">Version Tesla</string>
+  <string name="tesla_version_default">Inconnu</string>
   <string name="build_date">Date de compilation</string>
   <string name="build_date_default">Inconnu</string>
   <string name="processor_info">Processeur</string>
@@ -193,7 +193,7 @@
   <string name="default_string">Par défaut</string>
   <string name="reset_message">Rétablir les valeurs par défaut ?</string>
   <string name="header_category_personalization">Personnalisation</string>
-  <string name="interface_settings_title">Interface</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="navigation_settings_title">Navigation</string>
   <string name="dialog_color_picker">Sélecteur de couleur</string>
   <string name="press_color_to_apply">Appuyer sur la couleur pour l\'appliquer</string>
@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Gestes écran éteint</string>
   <string name="lcd_density">Densité de l\'écran</string>
   <string name="dialog_title_lcd_density">Densité LCD</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (par défaut)</string>
+  <string name="lcd_density_value_format">%1$d DPI (par défaut: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (par défaut)</string>
   <string name="restarting_ui">Redémarrage IU\u2026</string>
   <string name="su_indicator_title">Indicateur de super-utilisateur</string>
   <string name="su_indicator_summary">Indicateur de super-utilisateur lorsque les droits SU sont utilisés</string>

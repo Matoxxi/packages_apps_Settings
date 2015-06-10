@@ -59,15 +59,23 @@
                 android:title="@string/screensaver_settings_title"
                 android:fragment="com.android.settings.DreamSettings" />
 
-        <ListPreference
+        <PreferenceScreen
+                android:key="expanded_desktop"
+                android:title="@string/power_menu_expanded_desktop"
+                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+
+        <EditTextPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"
+                android:inputType="number"
                 android:persistent="false" />
 
-        <SwitchPreference
-                android:key="lift_to_wake"
-                android:title="@string/lift_to_wake_title"
-                android:persistent="false" />
+        <!-- Gestures -->
+        <PreferenceScreen
+                android:id="@+id/gesture_settings"
+                android:title="@string/gesture_title"
+                android:fragment="com.android.settings.tesla.GestureSettings"
+                />
 
         <com.android.settings.FontDialogPreference
                 android:key="font_size"
@@ -128,7 +136,6 @@
                 android:key="advanced_doze_options"
                 android:title="@string/doze_settings_title"
                 android:dependency="doze" />
-
          </PreferenceCategory>
 
 </PreferenceScreen>

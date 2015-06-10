@@ -43,8 +43,8 @@
   <string name="privacy_guard_advanced_settings_title">Pokočilé</string>
   <string name="privacy_guard_notification_title">Upozornění</string>
   <string name="privacy_guard_notifiation_summary">Zobrazit upozornění pokud je Ochrana soukromí aktivní.</string>
-  <string name="slim_version_title">Slim verze</string>
-  <string name="slim_version_default">Neznámá</string>
+  <string name="tesla_version_title">Tesla verze</string>
+  <string name="tesla_version_default">Neznámá</string>
   <string name="build_date">Datum sestavení</string>
   <string name="build_date_default">Neznámé</string>
   <string name="processor_info">Informace o procesoru</string>
@@ -193,7 +193,7 @@
   <string name="default_string">Výchozí</string>
   <string name="reset_message">Obnovit všechny položky na výchozí hodnoty?</string>
   <string name="header_category_personalization">Přizpůsobení</string>
-  <string name="interface_settings_title">Rozhraní</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="navigation_settings_title">Navigace</string>
   <string name="dialog_color_picker">Kapátko</string>
   <string name="press_color_to_apply">Níže klikněte na barvu, kterou chcete použít</string>
@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Gesta při vypnuté obrazovce</string>
   <string name="lcd_density">LCD hustota</string>
   <string name="dialog_title_lcd_density">LCD hustota</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (výchozí)</string>
+  <string name="lcd_density_value_format">%1$d DPI (výchozí: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (výchozí)</string>
   <string name="restarting_ui">Restartování UI\u2026</string>
   <string name="su_indicator_title">Superuser ukazatel</string>
   <string name="su_indicator_summary">Superuser ukazatel když je su relace aktivní</string>

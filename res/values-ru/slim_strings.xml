@@ -43,8 +43,8 @@
   <string name="privacy_guard_advanced_settings_title">Дополнительно</string>
   <string name="privacy_guard_notification_title">Уведомление</string>
   <string name="privacy_guard_notifiation_summary">Показывать уведомление, если защита личных данных включена.</string>
-  <string name="slim_version_title">Версия Slim</string>
-  <string name="slim_version_default">Неизвестно</string>
+  <string name="tesla_version_title">Версия Tesla</string>
+  <string name="tesla_version_default">Неизвестно</string>
   <string name="build_date">Дата сборки</string>
   <string name="build_date_default">Неизвестно</string>
   <string name="processor_info">Информация о процессоре</string>
@@ -193,7 +193,7 @@
   <string name="default_string">По умолчанию</string>
   <string name="reset_message">Сбросить все параметры на значения по умолчанию?</string>
   <string name="header_category_personalization">Персонализация</string>
-  <string name="interface_settings_title">Интерфейс</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="navigation_settings_title">Навигация</string>
   <string name="dialog_color_picker">Выбор цвета</string>
   <string name="press_color_to_apply">Нажмите на цвет внизу, чтобы применить его</string>
@@ -534,8 +534,8 @@
   <string name="screen_off_gesture_settings_title">Жесты на выключенном экране</string>
   <string name="lcd_density">Плотность LCD</string>
   <string name="dialog_title_lcd_density">Плотность LCD</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (по умолчанию)</string>
+  <string name="lcd_density_value_format">%1$d DPI (по умолчанию %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (по умолчанию)</string>
   <string name="restarting_ui">Перезапуск UI\u2026</string>
   <string name="su_indicator_title">Значок суперпользователя</string>
   <string name="su_indicator_summary">Значок суперпользователя при активной сессии SU</string>

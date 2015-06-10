@@ -37,8 +37,8 @@
   <string name="privacy_guard_advanced_settings_title">Avanzado</string>
   <string name="privacy_guard_notification_title">Notificación</string>
   <string name="privacy_guard_notifiation_summary">Mostrar notificación con Protección de Privacidad activa.</string>
-  <string name="slim_version_title">Versión SLIM</string>
-  <string name="slim_version_default">Desconocido</string>
+  <string name="tesla_version_title">Versión Tesla</string>
+  <string name="tesla_version_default">Desconocido</string>
   <string name="build_date">Fecha de compilación</string>
   <string name="build_date_default">Desconocido</string>
   <string name="mem_info">Memoria</string>
@@ -180,7 +180,7 @@
   <string name="default_string">Defecto</string>
   <string name="reset_message">¿Restablecer todas las entradas a los valores por defecto?</string>
   <string name="header_category_personalization">Personalización</string>
-  <string name="interface_settings_title">Interfaz</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="dialog_color_picker">Seleccionar color</string>
   <string name="press_color_to_apply">Pulsa sobre el color para ajustar</string>
   <string name="hex">Hexadecimal:</string>

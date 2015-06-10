@@ -43,8 +43,8 @@
   <string name="privacy_guard_advanced_settings_title">Erweitert</string>
   <string name="privacy_guard_notification_title">Benachrichtigung</string>
   <string name="privacy_guard_notifiation_summary">Bei aktiviertem Datenschutz Benachrichtigung anzeigen.</string>
-  <string name="slim_version_title">Slim-Version</string>
-  <string name="slim_version_default">Unbekannt</string>
+  <string name="tesla_version_title">Tesla-Version</string>
+  <string name="tesla_version_default">Unbekannt</string>
   <string name="build_date">Erstellungsdatum</string>
   <string name="build_date_default">Unbekannt</string>
   <string name="processor_info">Prozessor-Info</string>
@@ -193,7 +193,7 @@
   <string name="default_string">Standard</string>
   <string name="reset_message">Standardeinstellungen wiederherstellen?</string>
   <string name="header_category_personalization">Personalisierung</string>
-  <string name="interface_settings_title">Benutzeroberfläche</string>
+  <string name="interface_settings_title">Tesla Coil</string>
   <string name="navigation_settings_title">Navigation</string>
   <string name="dialog_color_picker">Farbauswahl</string>
   <string name="press_color_to_apply">Auf Farbe rechts unten drücken, um sie anzuwenden</string>
@@ -522,8 +522,8 @@
   <string name="bluetooth_accept_all_files">Alle Dateiformate akzeptieren</string>
   <string name="screen_off_gesture_settings_title">»Bildschirm aus«-Gesten</string>
   <string name="dialog_title_lcd_density">LCD Pixeldichte</string>
-  <string name="lcd_density_value_format">%d DPI</string>
-  <string name="lcd_density_default_value_format">%d DPI (Standard)</string>
+  <string name="lcd_density_value_format">%1$d DPI (Standard: %2$d DPI)</string>
+  <string name="lcd_density_default_value_format">%1$d DPI (Standard)</string>
   <string name="restarting_ui">UI wird neu gestartet\u2026</string>
   <string name="su_indicator_title">Superuser-Indikator</string>
   <string name="su_indicator_summary">Super-User-Anzeige wenn eine Su-Sitzung aktiv ist</string>

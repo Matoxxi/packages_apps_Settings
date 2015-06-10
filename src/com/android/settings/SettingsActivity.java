@@ -69,6 +69,7 @@ import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
+import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
@@ -307,7 +308,8 @@ public class SettingsActivity extends Activity
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
-            LiveDisplay.class.getName()
+            LiveDisplay.class.getName(),
+            ExpandedDesktopPreferenceFragment.class.getName()
     };
 
 
@@ -1228,15 +1230,6 @@ public class SettingsActivity extends Activity
                 } else if (id == R.id.development_settings) {
                     if (!showDev || um.hasUserRestriction(
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
-                        removeTile = true;
-                    }
-                } else if (id == R.id.screen_off_gesture_settings) {
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.slim.device", 0).versionCode > 0);
-                    } catch (PackageManager.NameNotFoundException e) {
-                    }
-                    if (!supported) {
                         removeTile = true;
                     }
 
