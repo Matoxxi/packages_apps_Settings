@@ -311,7 +311,7 @@ public class SettingsActivity extends Activity
             ApnSettings.class.getName(),
             LiveDisplay.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName()
-            LiveDisplay.class.getName()
+            LiveDisplay.class.getName(),
             BlacklistSettings.class.getName()
     };
 
