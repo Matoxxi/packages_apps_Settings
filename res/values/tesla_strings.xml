@@ -143,7 +143,6 @@
     <string name="volume_steps_15">15</string>
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
-<<<<<<< HEAD
 
 	<!-- Gesture Anywhere -->
     <string name="gesture_anywhere_title">Gesture Anywhere</string>
@@ -183,8 +182,6 @@
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="profile_applist_title">Applications</string>	
-=======
->>>>>>> testing
 	
     <!-- Battery Bar -->
     <string name="battery_bar_summary">Battery Bar options for status and nav bar</string>
