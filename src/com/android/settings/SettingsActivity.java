@@ -310,7 +310,7 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             LiveDisplay.class.getName(),
-            ExpandedDesktopPreferenceFragment.class.getName()
+            ExpandedDesktopPreferenceFragment.class.getName(),
             LiveDisplay.class.getName(),
             BlacklistSettings.class.getName()
     };
