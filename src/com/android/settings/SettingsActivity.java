@@ -73,6 +73,7 @@ import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
+import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -309,7 +310,9 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             LiveDisplay.class.getName(),
-            ExpandedDesktopPreferenceFragment.class.getName()
+            ExpandedDesktopPreferenceFragment.class.getName(),
+            LiveDisplay.class.getName(),
+            BlacklistSettings.class.getName()
     };
 
 
@@ -1178,7 +1181,7 @@ public class SettingsActivity extends Activity
                     if (TelephonyManager.getDefault().getPhoneCount() <= 1) {
                         removeTile = true;
                     }
-                } else if (id == R.id.data_usage_settings) {
+                 } else if (id == R.id.data_usage_settings) {
                     // Remove data usage when kernel module not enabled
                     final INetworkManagementService netManager = INetworkManagementService.Stub
                             .asInterface(ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));

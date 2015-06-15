@@ -50,7 +50,8 @@
         <dashboard-tile
                 android:id="@+id/mobile_networks"
                 android:title="@string/network_settings_title"
-                android:icon="@drawable/ic_settings_cellular">
+                android:icon="@drawable/ic_settings_cellular"
+                >
             <intent
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.phone"

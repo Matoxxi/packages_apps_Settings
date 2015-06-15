@@ -79,7 +79,7 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
     private SlimSeekBarPreference mMaxApps;
     private SwitchPreference mRecentsShowTopmost;
     private SwitchPreference mRecentPanelLeftyMode;
-    private ListPreference mRecentPanelScale;
+    private SlimSeekBarPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
@@ -171,8 +171,9 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
                     ((Boolean) newValue) ? 1 : 0);
             return true;
         } else if (preference == mMaxApps) {
+            int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
-                Settings.System.RECENTS_MAX_APPS, Integer.valueOf(String.valueOf(newValue)));
+                Settings.System.RECENTS_MAX_APPS, value);
             return true;
         }
         return false;
@@ -241,7 +242,7 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
 
         final int recentScale = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_SCALE_FACTOR, 100);
-        mRecentPanelScale.setValue(recentScale + "");
+        mRecentPanelScale.setInitValue(recentScale - 60);
 
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
@@ -260,9 +261,10 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
 
         mMaxApps = (SlimSeekBarPreference) findPreference(RECENTS_MAX_APPS);
         mMaxApps.setOnPreferenceChangeListener(this);
+        mMaxApps.minimumValue(5);
         mMaxApps.setInitValue(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.RECENTS_MAX_APPS, ActivityManager.getMaxRecentTasksStatic(),
-                UserHandle.USER_CURRENT));
+                UserHandle.USER_CURRENT) - 5);
         mMaxApps.disablePercentageValue(true);
 
         boolean enableDisableStockSearch = Settings.System.getInt(getContentResolver(),
@@ -327,8 +329,13 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
 
         mRecentPanelScale =
-                (ListPreference) findPreference(RECENT_PANEL_SCALE);
+                (SlimSeekBarPreference) findPreference(RECENT_PANEL_SCALE);
+        mRecentPanelScale.setInterval(5);
+        mRecentPanelScale.setDefault(100);
+        mRecentPanelScale.minimumValue(60);
         mRecentPanelScale.setOnPreferenceChangeListener(this);
+        mRecentPanelScale.setInitValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.RECENT_PANEL_SCALE_FACTOR, 100) - 60);
 
         mRecentPanelExpandedMode =
                 (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
