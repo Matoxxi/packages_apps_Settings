@@ -60,6 +60,8 @@ import com.android.settings.search.Indexable;
 import com.android.settings.search.SearchIndexableRaw;
 import com.android.settings.R;
 
+import com.android.settings.ManageFingerprints;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +99,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_LIVELINESS_OFF = 125;
     private static final int CHANGE_TRUST_AGENT_SETTINGS = 126;
-
+    private static final String KEY_MANAGE_FINGERPRINTS = "manage_fingerprints";
+	
     // Misc Settings
     private static final String KEY_SIM_LOCK = "sim_lock";
     private static final String KEY_SIM_LOCK_SETTINGS = "sim_lock_settings";
@@ -178,7 +181,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Add options for lock/unlock screen
         int resid = 0;
         if (!lockPatternUtils.isSecure()) {
-            // if there are multiple users, disable "None" setting
+            // if there are multiple users, disable "None" setting			
             UserManager mUm = (UserManager) context. getSystemService(Context.USER_SERVICE);
             List<UserInfo> users = mUm.getUsers(true);
             final boolean singleUser = users.size() == 1;
@@ -188,9 +191,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } else {
                 resid = R.xml.security_settings_chooser;
             }
+        } else if (lockPatternUtils.usingFingerprint()
+                && lockPatternUtils.isFingerprintInstalled(context)) {
+            resid = R.xml.security_settings_fingerprint;			
         } else if (lockPatternUtils.usingBiometricWeak() &&
                 lockPatternUtils.isBiometricWeakInstalled()) {
-            resid = R.xml.security_settings_biometric_weak;
+                resid = R.xml.security_settings_biometric_weak;
+        } else if (lockPatternUtils.usingFingerprint()) {
+            resid = R.xml.security_settings_fingerprint;
         } else {
             switch (lockPatternUtils.getKeyguardStoredPasswordQuality()) {
                 case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
@@ -715,7 +723,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (KEY_UNLOCK_SET_OR_CHANGE.equals(key)) {
             startFragment(this, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment",
                     R.string.lock_settings_picker_title, SET_OR_CHANGE_LOCK_METHOD_REQUEST, null);
-        } else if (KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING.equals(key)) {
+        } else if (KEY_MANAGE_FINGERPRINTS.equals((key))) {
+            Intent intent = ManageFingerprints.createIntent(getActivity(), false, true, true);
+            startActivity(intent);
+		} else if (KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING.equals(key)) {
             ChooseLockSettingsHelper helper =
                     new ChooseLockSettingsHelper(this.getActivity(), this);
             if (!helper.launchConfirmationActivity(
