@@ -49,7 +49,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
-    private static final String KEY_STATUS_BAR_NETWORK_ARROWS= "status_bar_show_network_activity";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_BATTERY_STYLE_HIDDEN = "4";
@@ -62,7 +61,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private int mbatteryStyle;
     private int mbatteryShowPercent;
-    private SwitchPreference mNetworkArrows;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,13 +99,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(String.valueOf(mbatteryStyle));
 
-        mNetworkArrows = (SwitchPreference) findPreference(KEY_STATUS_BAR_NETWORK_ARROWS);
-        mNetworkArrows.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-            Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0) == 1);
-        mNetworkArrows.setOnPreferenceChangeListener(this);
-        int networkArrows = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0);
-        updateNetworkArrowsSummary(networkArrows);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -133,14 +124,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                     (Boolean) newValue ? 1 : 0);
             return true;
-        } else if (preference == mNetworkArrows) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY,
-                    ((Boolean) newValue) ? 1 : 0);
-            int networkArrows = Settings.System.getInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_NETWORK_ACTIVITY, 0);
-            updateNetworkArrowsSummary(networkArrows);
-            return true;
         }
         return false;
     }
@@ -152,11 +135,24 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         enableStatusBarBatteryDependents(String.valueOf(mbatteryStyle));
     }
 
-    private void updateNetworkArrowsSummary(int value) {
-        String summary = value != 0
-                ? getResources().getString(R.string.enabled)
-                : getResources().getString(R.string.disabled);
-        mNetworkArrows.setSummary(summary);
+    private void updateStatusBarBrightnessControl() {
+        try {
+            if (mStatusBarBrightnessControl != null) {
+                int mode = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE,
+                    Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+
+                if (mode == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+                    mStatusBarBrightnessControl.setEnabled(false);
+                    mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
+                } else {
+                    mStatusBarBrightnessControl.setEnabled(true);
+                    mStatusBarBrightnessControl.setSummary(
+                        R.string.status_bar_toggle_brightness_summary);
+                }
+            }
+        } catch (SettingNotFoundException e) {
+        }
     }
 
     private void updateClockStyleDescription() {
