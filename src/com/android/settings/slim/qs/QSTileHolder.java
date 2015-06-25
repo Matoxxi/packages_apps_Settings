@@ -177,10 +177,6 @@ public class QSTileHolder {
                 resourceName = "ic_qs_led_on";
                 stringId = R.string.qs_tile_led;
                 break;
-            case QSConstants.TILE_TRDS:
-                resourceName = "ic_qs_trds_on";
-                stringId = R.string.qs_tile_trds;
-                break;
             default:
                 return null;
         }
