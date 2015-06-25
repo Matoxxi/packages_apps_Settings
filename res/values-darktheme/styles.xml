@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-   <style name="Theme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
-		<item name="android:background">@drawable/settings_header</item>
-   </style>
-
     <style name="Theme.SettingsBase" parent="@android:style/Theme.Material" />
     <style name="Theme.Light.WifiDialog" parent="@android:style/Theme.Material.Dialog.Alert" />
     <style name="SecurityPreferenceButtonContainer" parent="@android:style/Widget.Material.SegmentedButton">
