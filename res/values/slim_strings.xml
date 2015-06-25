@@ -29,7 +29,6 @@
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="additional_options_title">Additional options</string>
-    <string name="reset_default_message">Reset default</string>
 
     <!-- Privacy Guard -->
     <string name="app_security_title">App security</string>
@@ -565,7 +564,6 @@
     <string name="shortcut_action_users">Users</string>
     <string name="shortcut_action_lockdown">Lock now</string>
     <string name="shortcut_action_screenrecord">Screen recorder</string>
-    <string name="shortcut_action_theme_switch">Theme switcher</string>
 
     <string name="shortcut_action_longpress">Longpress:</string>
     <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
@@ -1195,15 +1193,6 @@
     <!-- Long press on lock screen lock icon to sleep -->
     <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
     <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string> 
-
-    <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
-    <string name="theme_auto_mode_title">Switch theme</string>
-    <string name="theme_auto_mode_off">Manual</string>
-    <string name="theme_auto_mode_lightsensor">On light condition change (experimental)</string>
-    <string name="theme_auto_mode_twilight">On daytime</string>
-    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
-    <string name="theme_reset_message">Reset theme state to default?</string>
 
     <!-- Performance settings -->
     <string name="title_tile_performance_profile">Performance profile</string>
