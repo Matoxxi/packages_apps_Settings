@@ -909,10 +909,6 @@
         <item>@string/shortcut_action_users</item>
         <item>@string/shortcut_action_lockdown</item>
         <item>@string/shortcut_action_screenrecord</item>
-<<<<<<< HEAD
-	    <item>@string/shortcut_action_theme_switch</item>
-=======
->>>>>>> parent of 013d02c... Settings: TRDS 5.0 (4/4)
     </string-array>
 
     <string-array name="shortcut_action_power_menu_values" translatable="false">
