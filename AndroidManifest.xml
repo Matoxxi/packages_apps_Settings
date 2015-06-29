@@ -142,6 +142,30 @@
             </intent-filter>
         </activity>
 
+        <!-- Slim Shortcuts -->
+        <activity
+            android:name="CreateSlimShortcut"
+            android:label="@string/slim_shortcut_picker"
+            android:icon="@*android:drawable/ic_shortcut_action_theme_switch"
+            android:theme="@android:style/Theme.Material.Dialog.NoActionBar"
+            android:excludeFromRecents="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".slim.SlimActionShortcut"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".slim.service.BootReceiver">
             <intent-filter>
@@ -178,6 +202,7 @@
                 android:taskAffinity=""
                 android:label="@string/wifi_settings"
                 android:configChanges="orientation|keyboardHidden|screenSize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.WIFI_SETTINGS" />
@@ -2135,6 +2160,7 @@
         <activity android:name=".cyanogenmod.PrivacySettings" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />
+        <activity android:name=".slim.PerformanceSettings" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
@@ -2236,6 +2262,9 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
+
+        <!-- Heads up notifications -->
+        <activity android:name=".headsup.HeadsUpSettings" />
 
     </application>
 </manifest>

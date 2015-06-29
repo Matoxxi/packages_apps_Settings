@@ -35,10 +35,12 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.nfc.NfcAdapter;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.INetworkManagementService;
 import android.os.Message;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
@@ -1145,6 +1147,7 @@ public class SettingsActivity extends Activity
                 android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug"));
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
+        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
         final int size = target.size();
         for (int i = 0; i < size; i++) {
@@ -1174,14 +1177,12 @@ public class SettingsActivity extends Activity
                         removeTile = true;
                     }
                 } else if (id == R.id.mobile_networks) {
-                    if (TelephonyManager.getDefault().getPhoneCount() > 1) {
+                    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                        removeTile = true;
+                    } else if (TelephonyManager.getDefault().getPhoneCount() > 1) {
                         removeTile = true;
                     }
-                } else if (id == R.id.msim_mobile_networks) {
-                    if (TelephonyManager.getDefault().getPhoneCount() <= 1) {
-                        removeTile = true;
-                    }
-                 } else if (id == R.id.data_usage_settings) {
+                } else if (id == R.id.data_usage_settings) {
                     // Remove data usage when kernel module not enabled
                     final INetworkManagementService netManager = INetworkManagementService.Stub
                             .asInterface(ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));
@@ -1265,6 +1266,10 @@ public class SettingsActivity extends Activity
 
                     }
                     if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.performance_settings) {
+                    if (!(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
                         removeTile = true;
                     }
                 }
