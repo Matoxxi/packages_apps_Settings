@@ -2266,5 +2266,11 @@
         <!-- Heads up notifications -->
         <activity android:name=".headsup.HeadsUpSettings" />
 
+        <receiver android:name="com.android.settings.tesla.OnBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+		
     </application>
 </manifest>
