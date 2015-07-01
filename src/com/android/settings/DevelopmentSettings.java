@@ -73,17 +73,10 @@ import com.android.settings.search.Indexable;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.util.Helpers;
 
-import com.android.settings.util.CMDProcessor;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-
-import java.io.InputStreamReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.BufferedReader;
 
 /*
  * Displays preferences for application developers.
@@ -163,7 +156,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String SELECT_LOGD_SIZE_KEY = "select_logd_size";
     private static final String SELECT_LOGD_SIZE_PROPERTY = "persist.logd.size";
     private static final String SELECT_LOGD_DEFAULT_SIZE_PROPERTY = "ro.logd.size";
-    private static final String SELINUX = "selinux";
 
     private static final String OPENGL_TRACES_KEY = "enable_opengl_traces";
 
@@ -222,8 +214,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private SwitchPreference mAllowMockLocation;
     private SwitchPreference mDebugViewAttributes;
     private SwitchPreference mQuickBoot;
-    private SwitchPreference mSelinux;
-	
+
     private PreferenceScreen mPassword;
     private String mDebugApp;
     private Preference mDebugAppPref;
@@ -303,18 +294,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
-        //SELinux
-        mSelinux = (SwitchPreference) findPreference(SELINUX);
-        mSelinux.setOnPreferenceChangeListener(this);
-
-        if (CMDProcessor.runSuCommand("getenforce").getStdout().contains("Enforcing")) {
-            mSelinux.setChecked(true);
-            mSelinux.setSummary(R.string.selinux_enforcing_title);
-        } else {
-            mSelinux.setChecked(false);
-            mSelinux.setSummary(R.string.selinux_permissive_title);
-        }
-		
         mUsbManager = (UsbManager)getActivity().getSystemService(Context.USB_SERVICE);
 
         if (android.os.Process.myUserHandle().getIdentifier() != UserHandle.USER_OWNER
@@ -1737,15 +1716,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         } else if (preference == mSimulateColorSpace) {
             writeSimulateColorSpace(newValue);
             return true;
-        } else if (preference == mSelinux) {
-            if (newValue.toString().equals("true")) {
-                CMDProcessor.runSuCommand("setenforce 1");
-                mSelinux.setSummary(R.string.selinux_enforcing_title);
-            } else if (newValue.toString().equals("false")) {
-                CMDProcessor.runSuCommand("setenforce 0");
-                mSelinux.setSummary(R.string.selinux_permissive_title);
-            }
-            return true;			
         } else if (preference == mRootAccess) {
             if ("0".equals(SystemProperties.get(ROOT_ACCESS_PROPERTY, "0"))
                     && !"0".equals(newValue)) {

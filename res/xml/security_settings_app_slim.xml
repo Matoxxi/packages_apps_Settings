@@ -31,7 +31,7 @@
             android:key="blacklist"
             android:title="@string/blacklist_title"
             android:fragment="com.android.settings.blacklist.BlacklistSettings" />
-			
+
     </PreferenceCategory>
 
 </PreferenceScreen>
