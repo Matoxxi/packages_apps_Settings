@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2015 The SlimRoms Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,20 +15,25 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/recent_panel_category">
 
+    <PreferenceCategory
+        android:key="general_recent_category"
+        android:title="@string/general_recent_category">
+
         <SwitchPreference
             android:key="use_slim_recents"
             android:title="@string/use_slim_recents_title"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <SwitchPreference
             android:key="only_show_running_tasks"
             android:title="@string/show_running_tasks_title"
             android:defaultValue="false" />
 
-        <SlimSeekBarPreference
-            android:key="max_apps"
-            android:title="@string/recents_max_apps_title" />
-            
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="slim_recent_category"
+        android:title="@string/slim_recent_category">
 
         <ListPreference
             android:dependency="use_slim_recents"
@@ -57,6 +59,12 @@
             android:persistent="false" />
 
         <SlimSeekBarPreference
+            android:dependency="use_slim_recents"
+            android:key="max_apps"
+            android:title="@string/recents_max_apps_title" />
+
+        <SlimSeekBarPreference
+            android:dependency="use_slim_recents"
             android:key="recent_panel_scale"
             android:title="@string/recent_panel_scale_title" />
 
@@ -80,5 +88,6 @@
             android:title="@string/recent_card_text_color_title"
             android:defaultValue="0x00ffffff"
             alphaSlider="true" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
