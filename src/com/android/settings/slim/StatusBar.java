@@ -75,11 +75,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        // Start observing for changes on auto brightness
-        StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
-                new StatusBarBrightnessChangedObserver(new Handler());
-        statusBarBrightnessChangedObserver.startObserving();
-
         mTicker = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_TICKER);
         mTicker.setChecked(Settings.System.getInt(
                 getContentResolver(), Settings.System.TICKER_ENABLED, 0) == 1);
