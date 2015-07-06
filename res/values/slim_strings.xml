@@ -1149,10 +1149,6 @@
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
-    <!-- Show/Hide Search Bar -->
-    <string name="recents_show_searchbar">Disable Search Bar in stock Recents</string>
-    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the stock recents panel</string>
-
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Blocked caller list</string>
     <string name="blacklist_edit_dialog_title">Edit blocked phone number</string>
