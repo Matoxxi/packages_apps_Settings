@@ -245,4 +245,9 @@
     <!-- Message for dialog that shows when the user cannot add anymore fingers -->	
     <string name="fingerprint_dialog_msg_max_fingers_reached">You can only enroll <xliff:g id="finger" example="5 fingerprints">%d</xliff:g> fingerprints. Delete an existing fingerprint.</string>	
 
+    <!-- Floating Windows -->
+    <string name="slim_action_floats">Slim Actions and Pie</string>
+    <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
+
+    <string name="qs_tile_slim_floats">Slim Floats</string>
 </resources>

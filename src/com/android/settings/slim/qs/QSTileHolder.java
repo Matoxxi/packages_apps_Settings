@@ -177,6 +177,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_led_on";
                 stringId = R.string.qs_tile_led;
                 break;
+            case QSConstants.TILE_SLIM_FLOATS:
+                resourceName = "ic_qs_floating_on";
+                stringId = R.string.qs_tile_slim_floats;
+                break;
             default:
                 return null;
         }
