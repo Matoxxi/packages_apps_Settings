@@ -663,6 +663,11 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 mDevelopmentShortcut.isChecked() ? 1 : 0);
     }
 
+    private void updateDevelopmentShortcutOptions() {
+        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
+    }
+
     private void updateAdbOverNetwork() {
         int port = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_PORT, 0);
