@@ -167,8 +167,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             = "immediately_destroy_activities";
     private static final String APP_PROCESS_LIMIT_KEY = "app_process_limit";
 
-    private static final String DEVELOPMENT_SHORTCUT_KEY = "development_shortcut";
-
     private static final String SHOW_ALL_ANRS_KEY = "show_all_anrs";
 
     private static final String PROCESS_STATS = "proc_stats";
@@ -250,8 +248,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private ListPreference mAnimatorDurationScale;
     private ListPreference mOverlayDisplayDevices;
     private ListPreference mOpenGLTraces;
-
-    private SwitchPreference mDevelopmentShortcut;
 
     private ListPreference mSimulateColorSpace;
 
@@ -344,7 +340,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mDebugViewAttributes = findAndInitSwitchPref(DEBUG_VIEW_ATTRIBUTES);
         mPassword = (PreferenceScreen) findPreference(LOCAL_BACKUP_PASSWORD);
         mAllPrefs.add(mPassword);
-        mDevelopmentShortcut = findAndInitSwitchPref(DEVELOPMENT_SHORTCUT_KEY);
 
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
@@ -353,7 +348,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             disableForUser(mAdbNotify);
             disableForUser(mEnableTerminal);
             disableForUser(mPassword);
-            disableForUser(mDevelopmentShortcut);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
@@ -649,23 +643,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateUseNuplayerOptions();
         updateUSBAudioOptions();
         updateRootAccessOptions();
-        updateDevelopmentShortcutOptions();
-    }
-
-    private void resetDevelopmentShortcutOptions() {
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.DEVELOPMENT_SHORTCUT, 0);
-    }
-
-    private void writeDevelopmentShortcutOptions() {
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.Secure.DEVELOPMENT_SHORTCUT,
-                mDevelopmentShortcut.isChecked() ? 1 : 0);
-    }
-
-    private void updateDevelopmentShortcutOptions() {
-        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
     }
 
     private void updateAdbOverNetwork() {
@@ -708,7 +685,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         resetDebuggerOptions();
         writeLogdSizeOption(null);
         resetRootAccessOptions();
-        resetDevelopmentShortcutOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1674,8 +1650,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             writeUseAwesomePlayerOptions();
         } else if (preference == mUSBAudio) {
             writeUSBAudioOptions();
-        } else if (preference == mDevelopmentShortcut) {
-            writeDevelopmentShortcutOptions();
         } else if (preference == mChamber) {
             if (Settings.Secure.getInt(getActivity().getContentResolver(),
                     Settings.Secure.CHAMBER_OF_SECRETS, 0) == 0) {
