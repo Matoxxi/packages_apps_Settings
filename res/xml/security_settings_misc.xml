@@ -73,12 +73,6 @@
                 android:summaryOn="@string/install_unknown_applications"
                 android:persistent="false" />
 
-        <!-- SELinux changer -->
-        <SwitchPreference
-                android:key="selinux"
-                android:title="@string/selinux_title"
-                android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory android:key="credentials_management"
