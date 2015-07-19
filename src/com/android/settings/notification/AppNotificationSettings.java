@@ -17,6 +17,7 @@
 package com.android.settings.notification;
 
 import android.app.Notification;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -56,6 +57,7 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
     private static final String KEY_SHOW_ON_KEYGUARD = "show_on_keyguard";
     private static final String KEY_NO_ONGOING_ON_KEYGUARD = "no_ongoing_on_keyguard";
     private static final String KEY_HEADS_UP = "heads_up";
+    private static final String PREF_HEADS_UP_FLOATING = "heads_up_floating";
 
     static final String EXTRA_HAS_SETTINGS_INTENT = "has_settings_intent";
     static final String EXTRA_SETTINGS_INTENT = "settings_intent";
@@ -163,6 +165,11 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
         mShowOnKeyguard = (SwitchPreference) findPreference(KEY_SHOW_ON_KEYGUARD);
         mShowNoOngoingOnKeyguard = (SwitchPreference) findPreference(KEY_NO_ONGOING_ON_KEYGUARD);
 
+        mHeadsUpFloatingWindow = (SwitchPreference) findPreference(PREF_HEADS_UP_FLOATING);
+        mHeadsUpFloatingWindow.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_FLOATING, 1, UserHandle.USER_CURRENT) == 1);
+        mHeadsUpFloatingWindow.setOnPreferenceChangeListener(this);
+
         final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
                 Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
         mHeadsUp = (SwitchPreference) findPreference(KEY_HEADS_UP);
@@ -245,7 +252,12 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 final boolean showNoOngoingOnKeyguard = (Boolean) newValue;
                 int keyguard = mBackend.getShowNotificationForPackageOnKeyguard(pkg, uid);
-                if (showNoOngoingOnKeyguard
+        	if (preference == mHeadsUpFloatingWindow) {
+            	Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.HEADS_UP_FLOATING,
+            	(Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            	return true;
+               } else if (showNoOngoingOnKeyguard
                         && (keyguard & Notification.SHOW_NO_ONGOING_NOTI_ON_KEYGUARD) == 0) {
                     keyguard |= Notification.SHOW_NO_ONGOING_NOTI_ON_KEYGUARD;
                 } else {
