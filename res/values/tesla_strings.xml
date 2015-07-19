@@ -282,7 +282,5 @@
     <!-- Floating Windows -->
     <string name="slim_action_floats">Slim Actions and Pie</string>
     <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
-    <string name="heads_up_floating_window_title">Heads Up</string>
-    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
     <string name="qs_tile_slim_floats">Slim Floats</string>
 </resources>
