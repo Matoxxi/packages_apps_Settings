@@ -17,6 +17,7 @@
 package com.android.settings.notification;
 
 import android.app.Notification;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -245,7 +246,7 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 final boolean showNoOngoingOnKeyguard = (Boolean) newValue;
                 int keyguard = mBackend.getShowNotificationForPackageOnKeyguard(pkg, uid);
-                if (showNoOngoingOnKeyguard
+		if (showNoOngoingOnKeyguard
                         && (keyguard & Notification.SHOW_NO_ONGOING_NOTI_ON_KEYGUARD) == 0) {
                     keyguard |= Notification.SHOW_NO_ONGOING_NOTI_ON_KEYGUARD;
                 } else {
