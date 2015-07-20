@@ -70,11 +70,13 @@ public class ChooseLockPattern extends SettingsActivity {
     }
 
     public static Intent createIntent(Context context, final boolean isFallback,
+                                      final boolean isFingerprintFallback,	
             boolean requirePassword, boolean confirmCredentials) {
         Intent intent = new Intent(context, ChooseLockPattern.class);
         intent.putExtra("key_lock_method", "pattern");
         intent.putExtra(ChooseLockGeneric.CONFIRM_CREDENTIALS, confirmCredentials);
         intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK, isFallback);
+        intent.putExtra(LockPatternUtils.LOCKSCREEN_FINGERPRINT_FALLBACK, isFingerprintFallback);
         intent.putExtra(EncryptionInterstitial.EXTRA_REQUIRE_PASSWORD, requirePassword);
         return intent;
     }
@@ -405,7 +407,7 @@ public class ChooseLockPattern extends SettingsActivity {
                 updateStage(Stage.Introduction);
             } else if (mUiStage.leftMode == LeftButtonMode.Cancel) {
                 // They are canceling the entire wizard
-                getActivity().setResult(RESULT_FINISHED);
+                getActivity().setResult(RESULT_CANCELED);
                 getActivity().finish();
             } else {
                 throw new IllegalStateException("left footer button pressed, but stage of " +
@@ -566,13 +568,16 @@ public class ChooseLockPattern extends SettingsActivity {
             final boolean isFallback = getActivity().getIntent()
                 .getBooleanExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK, false);
 
+            final boolean isFingerprintFallback = getActivity().getIntent()
+                    .getBooleanExtra(LockPatternUtils.LOCKSCREEN_FINGERPRINT_FALLBACK, false);
+								
             boolean wasSecureBefore = utils.isSecure();
 
             final boolean required = getActivity().getIntent().getBooleanExtra(
                     EncryptionInterstitial.EXTRA_REQUIRE_PASSWORD, true);
             utils.setCredentialRequiredToDecrypt(required);
             utils.setLockPatternEnabled(true);
-            utils.saveLockPattern(mChosenPattern, isFallback);
+            utils.saveLockPattern(mChosenPattern, isFallback, isFingerprintFallback);
 
             if (lockVirgin) {
                 utils.setVisiblePatternEnabled(true);

@@ -202,7 +202,6 @@
                 android:taskAffinity=""
                 android:label="@string/wifi_settings"
                 android:configChanges="orientation|keyboardHidden|screenSize">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.WIFI_SETTINGS" />
@@ -1257,6 +1256,7 @@
             android:theme="@style/SetupWizardDisableAppStartingTheme" />
 
         <activity android:name="ChooseLockPattern" android:exported="false"/>
+        <activity android:name="ManageFingerprints" android:exported="false"/>
 
         <activity android:name="SetupChooseLockPassword"
             android:exported="false"
@@ -2160,7 +2160,6 @@
         <activity android:name=".cyanogenmod.PrivacySettings" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />
-        <activity android:name=".slim.PerformanceSettings" />
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
@@ -2262,9 +2261,6 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
-
-        <!-- Heads up notifications -->
-        <activity android:name=".headsup.HeadsUpSettings" />
 
     </application>
 </manifest>

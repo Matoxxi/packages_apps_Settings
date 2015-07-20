@@ -405,6 +405,8 @@
     <string name="clock_date_style_uppercase">Uppercase</string>
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
+    <string name="status_bar_ticker_title">Notification Ticker</string>
+    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
@@ -704,25 +706,25 @@
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
 
-    <!-- Doze options -->
-    <string name="display_category_doze_options_title">Ambient display (doze) options</string>
-    <string name="doze_settings_title">Advanced doze options</string>
-    <string name="doze_timeout_title">Doze pulse timeout</string>
+    <!-- Ambient display options -->
+    <string name="display_category_doze_options_title">Ambient display options</string>
+    <string name="doze_settings_title">Advanced ambient display options</string>
+    <string name="doze_timeout_title">Pulse timeout</string>
     <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
     <string name="doze_trigger_pickup_title">Pick up gesture trigger</string>
-    <string name="doze_trigger_pickup_summary_on">Doze pulse will be triggered by pick up gesture sensor events</string>
+    <string name="doze_trigger_pickup_summary_on">Ambient display pulse will be triggered by pick up gesture sensor events</string>
     <string name="doze_trigger_pickup_summary_off">Pick up gesture sensor will not be utilized as a triggering mechanism</string>
     <string name="doze_trigger_sigmotion_title">Significant motion trigger</string>
-    <string name="doze_trigger_sigmotion_summary_on">Doze pulse will be triggered by significant motion sensor events</string>
+    <string name="doze_trigger_sigmotion_summary_on">Ambient display pulse will be triggered by significant motion sensor events</string>
     <string name="doze_trigger_sigmotion_summary_off">Significant motion sensor will not be utilized as a triggering mechanism</string>
     <string name="doze_trigger_notification_title">Notification trigger</string>
-    <string name="doze_trigger_notification_summary_on">Doze pulse will be triggered by notifications</string>
+    <string name="doze_trigger_notification_summary_on">Ambient display pulse will be triggered by notifications</string>
     <string name="doze_trigger_notification_summary_off">Notifications will not be utilized as a trigger</string>
-    <string name="doze_schedule_title">Doze schedule</string>
-    <string name="doze_schedule_summary_on">Predefined doze repeat intervals (normally [1s,10s,30s,60s,120s]) will be used (default)</string>
-    <string name="doze_schedule_summary_off">Doze will only pulse once per notification</string>
-    <string name="doze_brightness_title">Doze brightness level</string>
-    <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
+    <string name="doze_schedule_title">Repeat schedule</string>
+    <string name="doze_schedule_summary_on">Predefined ambient display repeat intervals (normally [1s,10s,30s,60s,120s]) will be used (default)</string>
+    <string name="doze_schedule_summary_off">Ambient display will only pulse once per notification/trigger</string>
+    <string name="doze_brightness_title">Ambient display brightness level</string>
+    <string name="doze_brightness_summary">Brightness level of ambient display pulse screen (% of max allowed brightness)</string>
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigation options</string>
@@ -807,8 +809,17 @@
 
     <!-- Heads up -->
     <string name="heads_up_title">Heads up notification</string>
+    <string name="heads_up_global_switch_title">Headsup notifications mode</string>
+    <string name="heads_up_global_switch_summary_disabled">Headsup notifications are disabled</string>
+    <string name="heads_up_global_switch_summary_perapp">Headsup notifications are en-/disabled on a per app basis</string>
+    <string name="heads_up_global_switch_summary_forced">Headsup notifications are force enabled for all apps</string>
+    <string name="heads_up_global_switch_disabled">Never show headsup notifications</string>
+    <string name="heads_up_global_switch_perapp">Show headsup notifications on a per app basis</string>
+    <string name="heads_up_global_switch_forced">Always show headsup notifications</string>
     <string name="app_notification_enable_heads_up_title">Show heads up</string>
     <string name="app_notification_enable_heads_up_summary">Show notifications from this app as heads up</string>
+    <string name="app_notification_enable_heads_up_global_disabled_summary">Heads up are currently globally disabled in notification settings</string>
+    <string name="app_notification_enable_heads_up_global_forced_summary">Heads up are currently globally enabled in notification settings</string>
     <string name="heads_up_snooze_title">Snooze timer</string>
     <string name="heads_up_snooze_summary">If snooze button is pressed, disable heads up for <xliff:g id="number">%d</xliff:g> minutes</string>
     <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
@@ -1073,8 +1084,22 @@
     <!-- Recent panel -->
     <string name="recent_panel_category">Recent apps panel</string>
     <string name="recents_settings_summary">Options for SlimRecents</string>
+    <string name="general_recent_category">General</string>
+    <string name="stock_recent_category">Stock recents</string>
+    <string name="slim_recent_category">SlimRecents</string>
+
     <string name="use_slim_recents_title">SlimRecents</string>
     <string name="show_running_tasks_title">Only show running apps</string>
+
+    <string name="show_clear_all_recents_title">Show \'clear all\' button</string>
+    <string name="show_clear_all_recents_summary">Show clear all button on recents panel</string>
+    <string name="recents_clear_all_location_title">Clear all recents location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_show_searchbar">Show search bar in recents menu</string>
+
     <string name="recents_max_apps_title">Max allowed apps</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_expanded_mode_title">Expanded mode</string>
@@ -1149,10 +1174,6 @@
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
-    <!-- Show/Hide Search Bar -->
-    <string name="recents_show_searchbar">Disable Search Bar in stock Recents</string>
-    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the stock recents panel</string>
-
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Blocked caller list</string>
     <string name="blacklist_edit_dialog_title">Edit blocked phone number</string>
@@ -1190,22 +1211,6 @@
     <string name="longpress_lock_icon_to_sleep_title">Long press lock icon to sleep</string>
     <string name="longpress_lock_icon_to_sleep_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string> 
 
-    <!-- Performance settings -->
-    <string name="title_tile_performance_profile">Performance profile</string>
-    <string name="performance_settings_title">Performance</string>
-
-    <!-- Performance Settings : Performance profile settings -->
-    <string name="perf_profile_title">Profile</string>
-    <string name="perf_profile_summary" translatable="false">%s</string>
-
-    <!-- Performance Settings : Warning dialog -->
-    <string name="performance_settings_warning_title">Proceed with caution</string>
-    <string name="performance_settings_warning">These settings are experimental and any applied changes have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request that you do not file bug reports if any settings are changed from their defaults.</string>
-
-    <!-- Performance Settings : Set on boot option -->
-    <string name="performance_set_on_boot">Set on boot</string>
-    <string name="performance_set_on_boot_summary">Restore the settings on boot</string>
-
     <!-- Automatic performance profiles -->
     <string name="autoperf_title">Enable per-app profiles</string>
     <string name="autoperf_summary">Automatically choose an appropriate performance profile for various applications</string>
@@ -1220,29 +1225,6 @@
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
 
-    <!-- Heads Up -->
-    <string name="category_heads_up">Heads up notifications</string>
-    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
-    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
-    <string name="add_heads_up_package">Add app</string>
-    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
-    <string name="heads_up_dnd_title">Do not disturb</string>
-    <string name="heads_up_blacklist_title">Blacklist</string>
-    <string name="heads_up_disabled_notice">To allow applications to display interactive notifications in a pop-up window on your screen, enable Heads up.</string>
-
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Time out</string>
-    <string name="heads_up_time_out_summary">Notification will show for <xliff:g id="number">%d</xliff:g> seconds</string>
-    <string name="heads_up_time_out_never_summary">Notification will show until it is dismissed</string>
-    <string name="heads_up_time_out_1sec">1 seconds</string>
-    <string name="heads_up_time_out_2sec">2 seconds</string>
-    <string name="heads_up_time_out_4sec">4 seconds</string>
-    <string name="heads_up_time_out_6sec">6 seconds</string>
-    <string name="heads_up_time_out_8sec">8 seconds</string>
-    <string name="heads_up_time_out_10sec">10 seconds</string>
-    <string name="heads_up_time_out_never">Never</string>
-
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Chamber of secrets</string>
     <string name="chamber_toast">The chamber of secrets has opened</string>
@@ -1253,5 +1235,22 @@
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
+
+    <!-- Navigation Ring Targets -->
+    <string name="navigation_ring_title">Navigation ring targets</string>
+    <string name="navigation_ring_enable_title">Enable navigation rings</string>
+    <string name="navigation_ring_customize">Target actions</string>
+    <string name="navigation_ring_summary">Customize navigation ring target behavior</string>
+    <string name="navigation_ring_message">Tap the edit icon to open the navigation ring for editing.\n\nSelect a target to configure its behavior.\n\nTap the check mark icon to save your changes, or restore to reset the settings to defaults.</string>
+    <string name="navigation_bar_title">Buttons and layout</string>
+    <string name="navigation_bar_help_text">To get started tap the edit icon to unlock the navigation bar for editing.\n\nYou can tap an icon to change its shortcut, or long press an icon to re-arrange the layout.\n\nTap save to commit your changes, or restore to reset the layout to default settings.</string>
+    <string name="navigation_restore_button_text">Restore\ndefaults</string>
+    <string name="navigation_edit_button_text">Edit</string>
+    <string name="navigation_save_button_text">Save</string>
+    <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
 
 </resources>
